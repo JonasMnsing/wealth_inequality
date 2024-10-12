@@ -3,7 +3,7 @@
 - Agents engage in pairwise transactions according to idealized rules
 - Interactions usually converge the total number of agents $N$ and their total wealth $W$, i.e. for a closed economy
 - *Yard Sale Model (YSM):* In an interaction, the losing agent is selected with even odds, but the amount lost is a fraction $\beta$ of the wealth of the poorer agent
-- Idea: People engange in transaction for which the amount at stake is strictly less than their own total wealth
+- Idea: People engage in transaction for which the amount at stake is strictly less than their own total wealth
 - This will always end up in oligarchy (one agent gets all the wealth). Richer agents are able to withstand a longer string of losses 
 - One might also add an uneven (biased) seletion of the losing agents
 - A redistribution term might represent taxes preventing oligarchy

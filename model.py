@@ -13,6 +13,7 @@ class economy:
     def transaction(self, gamma : float, dt : float, chi=0.0):
 
         agents  = np.random.choice(self.agents, 2, replace=False)
+        # agents  = np.random.choice(self.agents[self.wealth > 0], 2, replace=False)
         w1      = self.wealth[agents[0]]
         w2      = self.wealth[agents[1]]
 
@@ -48,14 +49,15 @@ class economy:
 if __name__ == '__main__':
 
     # Parameter
-    N_agents        = 100
-    N_transactions  = 1000
-    gamma           = 0.5
+    N_agents        = 50
+    N_transactions  = 10000
     chi             = 0.0
     dt              = 1.0
 
-    system          = economy(N_agents=N_agents)
-    wealth_storage  = system.run_economy(N_transactions=N_transactions, dt=dt, gamma=gamma, chi=chi)
+    for gamma in np.round(np.linspace(0.1,1.0,10),1):
 
-    np.savetxt(f"data/wealth_final_{gamma}_{chi}.csv", wealth_storage)
+        system          = economy(N_agents=N_agents)
+        wealth_storage  = system.run_economy(N_transactions=N_transactions, dt=dt, gamma=gamma, chi=chi)
+
+        np.savetxt(f"data/wealth_final_{gamma}_{chi}.csv", wealth_storage)
     
